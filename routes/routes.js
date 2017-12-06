@@ -11,8 +11,8 @@ angular.module('myApp').config(function($routeProvider){
 	$routeProvider.when	('/about-us', {
 		templateUrl : 'templates/about-us.html',
 	})
-	$routeProvider.when	('/portfolio', {
-		templateUrl : 'templates/portfolio.html',
+	$routeProvider.when	('/about-Jason', {
+		templateUrl : 'templates/about-jason.html',
 	})
 
 

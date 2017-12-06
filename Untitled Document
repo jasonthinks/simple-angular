@@ -1,0 +1,8 @@
+So now this video to show you how to add an element to the sidebar.
+Now we have added or replaced a link in the sidebar .. to add another one just copy any of 
+<div class="list-group-item"> 
+ bla bla bla
+</div>
+so now what about routing ?
+pretty simple
+thanks for watching

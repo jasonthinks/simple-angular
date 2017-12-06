@@ -25,3 +25,7 @@ body{font-size:14px;height:100vh}*,:focus{outline:0!important}.navbar{min-height
 input.form-control.ng-pristine.ng-untouched.ng-valid.ng-empty.ng-hide {
   display: block !important;
 }
+.list-group {
+  margin-bottom : 0 !important;
+  padding-bottom: 0 !important;
+}

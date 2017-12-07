@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-ng-app="AnalyticsApp">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Analytics</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"> </script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <link href="resources/analytics.min.css" rel="stylesheet">
+    <script src="../js-apps/analytics/js/app.js"></script>
+    <script src="../js-apps/analytics/js/routes/routes.js"></script>
+    <script src="../js-apps/analytics/js/services/apihandler.js"></script>
+    <script src="../js-apps/analytics/js/services/apimiddleware.js"></script>
+    <script src="../js-apps/analytics/js/directives/directives.js"></script>
+    <script src="../js-apps/analytics/js/controllers/main.js"></script>
+    <script src="../js-apps/analytics/js/providers/config.js"></script>
+    <script src="../js-apps/analytics/js/providers/translations.js"></script>
+    <script type="text/javascript">
+        angular.module('AnalyticsApp').config(['analyticsAppConfigProvider', function (config) {
+            var defaults = config.$get();
+            config.set({
+                appName: 'Analytics',
+                defaultLang: 'zh',
+                listUrl: '/fileManager/list/',
+                pickCallback: function (item) {
+                    var msg = 'Picked %s "%s" for external use'
+                        .replace('%s', item.type)
+                        .replace('%s', item.fullPath());
+                    window.alert(msg);
+                },
+
+                allowedActions: angular.extend(defaults.allowedActions, {
+                    pickFiles: false,
+                    pickFolders: false,
+                    downloadMultiple: false
+                }),
+                tplPath: 'js-apps/analytics/templates'
+            });
+        }]);
+    </script>
+</head>
+<body class="ng-cloak">
+    <main-content> </main-content>
+</body>
+</html>
